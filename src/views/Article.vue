@@ -1,6 +1,6 @@
 <template>
-  <div id="about">
-    aboutページ
+  <div id="article">
+    articleページ
   </div>
 </template>
 
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="sass">
-
+  #article
 </style>
