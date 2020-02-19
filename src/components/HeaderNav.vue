@@ -1,20 +1,20 @@
 <template>
   <div id="navbar">
     <div id="burger">
-      <div class="burger-item" @click="clickOpen" :class="{ 'is-active': isActive }">
+      <div class="burger-item" @click="changeNavbarActive" :class="{ 'is-active': isActive }">
         <span class="top"></span>
         <span class="middle"></span>
         <span class="bottom"></span>
       </div>
     </div>
     <transition name="nav">
-      <nav id="headerNav" v-show="headerNav">
+      <nav id="header-nav" v-show="isActive">
         <ul class="nav">
           <li class="nav-item"><router-link to="/">top</router-link></li>
           <li class="nav-item"><router-link to="/about">about</router-link></li>
           <li class="nav-item"><router-link to="/article">article</router-link></li>
           <li class="nav-item"><router-link to="/contact">contact</router-link></li>
-          <li class="nav-item"><router-link to="portfolio">portfolio</router-link></li>
+          <li class="nav-item"><router-link to="/portfolio">portfolio</router-link></li>
         </ul>
       </nav>
     </transition>
@@ -23,23 +23,31 @@
 
 <script>
 export default {
-  name: 'navbar',
   data() {
     return {
       isActive: false,
-      headerNav: false
     }
   },
   methods: {
-    clickOpen: function() {
+    changeNavbarActive: function() {
       this.isActive = !this.isActive;
-      this.headerNav = !this.headerNav;
     }
   }
 }
 </script>
 
 <style lang="sass">
+  #header-nav
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    position: fixed
+    background-color: rgb(128, 128, 128)
+    display: flex
+    justify-content: center
+    align-items: center
+
   .burger 
     &-item
       width: 36px
@@ -49,6 +57,7 @@ export default {
       margin-left: auto
       position: relative
       cursor: pointer
+      z-index: 100
       span 
         width: 100%
         height: 8%
@@ -75,7 +84,16 @@ export default {
             top: 50%
 
   .nav
-    list-style-type: none
+    list-style: none
+    text-align: center
+    z-index: 99 
+    &-item
+      font-family: serif;
+      font-size: 40px
+      line-height: 2
+      a
+        color: #EEEEEE
+        text-decoration: none
     &-enter
       opacity: 0
       &-to
@@ -87,6 +105,5 @@ export default {
       &-to
         opacity: 0
       &-active
-        transition: .5s 
-
+        transition: .5s
 </style>
