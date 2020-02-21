@@ -1,11 +1,9 @@
 <template>
   <div id="header-nav">
-    <div id="burger">
-      <div class="burger-item" @click="changeNavbarActive" :class="{ 'is-active': isActive }">
-        <span class="top"></span>
-        <span class="middle"></span>
-        <span class="bottom"></span>
-      </div>
+    <div class="burger-items" @click="changeNavbarActive" :class="{ 'is-active': isActive }">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
     </div>
     <transition name="nav">
       <nav class="nav" v-show="isActive">
@@ -39,40 +37,39 @@ export default {
 <style lang="sass">
   #header-nav
     
-    .burger 
-      &-item
-        width: 36px
-        height: 30px
-        margin-top: 15px
-        margin-right: 15px
-        margin-left: auto
-        position: relative
-        cursor: pointer
-        z-index: 100
+    .burger-items 
+      width: 36px
+      height: 30px
+      margin-top: 15px
+      margin-right: 15px
+      margin-left: auto
+      position: relative
+      cursor: pointer
+      z-index: 100
+      span 
+        width: 100%
+        height: 8%
+        background-color: rgba(0, 0, 0, 1)
+        display: block
+        transition: .5s
+        position: absolute
+        &.top
+          top: 0
+        &.middle
+          top: 45%
+        &.bottom
+          bottom: 0
+      &.is-active 
         span 
-          width: 100%
-          height: 8%
-          background-color: rgba(0, 0, 0, 1)
-          display: block
           transition: .5s
-          position: absolute
           &.top
-            top: 0
-          &.middle
-            top: 45%
+            transform: rotate(45deg)
+            top: 50%
+          &.middle 
+            opacity: 0
           &.bottom
-            bottom: 0
-        &.is-active 
-          span 
-            transition: .5s
-            &.top
-              transform: rotate(45deg)
-              top: 50%
-            &.middle 
-              opacity: 0
-            &.bottom
-              transform: rotate(-45deg)
-              top: 50%
+            transform: rotate(-45deg)
+            top: 50%
 
     .nav
       width: 100%
