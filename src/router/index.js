@@ -7,17 +7,21 @@ import About from '../views/About'
 import Article from '../views/Article'
 import Contact from '../views/Contact'
 import Portfolio from '../views/Portfolio'
+import Home from '../../pages/Home'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    component: Init,
+    component: Index,
     children: [
       {
+        /*path: '',
+        component: Index
+      },{*/
         path: '',
-        component: Index,
+        component: Home,
       },{
         path: 'about',
         component: About

@@ -1,7 +1,6 @@
 <template>
   <div id="index">
-  <header-nav></header-nav>
-  <router-view></router-view>
+    topページ
   </div>
 </template>
 
