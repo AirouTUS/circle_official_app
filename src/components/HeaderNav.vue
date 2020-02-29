@@ -8,7 +8,7 @@
     <transition name="nav">
       <nav class="nav" v-show="isActive">
         <ul class="navbar">
-          <li class="navbar-items"><router-link to="/">top</router-link></li>
+          <li class="navbar-items" @click="toTop"><router-link to="/">top</router-link></li>
           <li class="navbar-items"><router-link to="/about">about</router-link></li>
           <li class="navbar-items"><router-link to="/article">article</router-link></li>
           <li class="navbar-items"><router-link to="/contact">contact</router-link></li>
@@ -29,6 +29,14 @@ export default {
   methods: {
     changeNavbarActive: function() {
       this.isActive = !this.isActive;
+    },
+    toTop: function() {
+      this.isActive = false;
+    }
+  },
+  watch: {
+    "$route.path"() {
+      this.isActive = false;
     }
   }
 }
@@ -92,6 +100,22 @@ export default {
           a
             color: #EEEEEE
             text-decoration: none
+            position: relative
+            &:after
+              position: absolute
+              display: inline-block
+              bottom: -9px;
+              left: 0;
+              content: '';
+              width: 100%;
+              height: 3px;
+              background: #EEEEEE;
+              transform: scale(0, 1);
+              transform-origin: center top;
+              transition: .3s;
+            &:hover
+              &:after
+                transform: scale(1, 1);
       &-enter
         opacity: 0
         &-to

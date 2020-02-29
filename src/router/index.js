@@ -14,26 +14,29 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: Index,
+    component: Init,
     children: [
       {
-        /*path: '',
-        component: Index
-      },{*/
         path: '',
-        component: Home,
-      },{
-        path: 'about',
-        component: About
-      },{
-        path: 'article',
-        component: Article
-      },{
-        path: 'contact',
-        component: Contact
-      },{
-        path: 'portfolio',
-        component: Portfolio
+        component: Index,
+        children: [
+          {
+            path: '',
+            component: Home
+          },{
+            path: 'about',
+            component: About
+          },{
+            path: 'article',
+            component: Article
+          },{
+            path: 'contact',
+            component: Contact
+          },{
+            path: 'portfolio',
+            component: Portfolio
+          }
+        ]
       }
     ]
   }
