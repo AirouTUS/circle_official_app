@@ -7,6 +7,7 @@ import About from '../views/About'
 import Article from '../views/Article'
 import Contact from '../views/Contact'
 import Portfolio from '../views/Portfolio'
+import Home from '../../pages/Home'
 
 Vue.use(VueRouter)
 
@@ -18,18 +19,24 @@ const routes = [
       {
         path: '',
         component: Index,
-      },{
-        path: 'about',
-        component: About
-      },{
-        path: 'article',
-        component: Article
-      },{
-        path: 'contact',
-        component: Contact
-      },{
-        path: 'portfolio',
-        component: Portfolio
+        children: [
+          {
+            path: '',
+            component: Home
+          },{
+            path: 'about',
+            component: About
+          },{
+            path: 'article',
+            component: Article
+          },{
+            path: 'contact',
+            component: Contact
+          },{
+            path: 'portfolio',
+            component: Portfolio
+          }
+        ]
       }
     ]
   }
