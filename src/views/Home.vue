@@ -1,8 +1,8 @@
 <template>
   <div id="index">
-    <img class="logo_img" src="../src/assets/images/logo.png" />
+    <img class="logo_img" src="../assets/images/logo.png" />
     <div class="content">
-      <img class="neko_img" src="../src/assets/images/neko.png" />
+      <img class="neko_img" src="../assets/images/neko.png" />
       <h1 class="content_title">Welcome to <br /><span>airou</span></h1>
       <div class="pad">
         <div class="pad_items">
@@ -33,7 +33,7 @@
           </a>
         </div>
         <div class="foot_img">
-          <img class="neko_img_2" src="../src/assets/images/neko.png" />
+          <img class="neko_img_2" src="../assets/images/neko.png" />
         </div>
       </div>
     </div>

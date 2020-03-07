@@ -7,7 +7,7 @@ import About from '../views/About'
 import Article from '../views/Article'
 import Contact from '../views/Contact'
 import Portfolio from '../views/Portfolio'
-import Home from '../../pages/Home'
+import Home from '../views/Home'
 
 Vue.use(VueRouter)
 
