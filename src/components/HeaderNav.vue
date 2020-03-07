@@ -81,10 +81,10 @@ export default {
       display: flex
       justify-content: center
       align-items: center
+      z-index: 99
       .navbar
         list-style: none
         text-align: center
-        z-index: 99 
         &-items
           font-family: serif
           font-size: 40px
