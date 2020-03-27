@@ -8,6 +8,7 @@ import Article from '../views/Article'
 import Contact from '../views/Contact'
 import Portfolio from '../views/Portfolio'
 import Home from '../views/Home'
+import Recruit from '../views/Recruit'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,9 @@ const routes = [
           },{
             path: 'portfolio',
             component: Portfolio
+          },{
+            path: 'recruit',
+            component: Recruit
           }
         ]
       }

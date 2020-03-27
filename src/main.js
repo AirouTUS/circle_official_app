@@ -7,8 +7,6 @@ import './assets/sass/global.sass'
 import Contentful from './models/Contentful'
 import Buefy from 'buefy'
 
-library.add(faEnvelope, faTwitter, faGithub)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
 Vue.use(Buefy, {
