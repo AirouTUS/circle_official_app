@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <div class="about-items">
-      <img src="../assets/circleicon.png" >
+      <img src="../assets/images/circleicon.png" >
       <p class="about-text">
         私たちは東京理科大学葛飾キャンパス周辺を中心に活動を行なっています。
         後輩一人に先輩がマンツーマンで担当し、するので初心者でも問題なくプログラミングを

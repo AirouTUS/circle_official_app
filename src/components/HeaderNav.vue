@@ -2,7 +2,7 @@
   <div id="header-nav">
     <div class="navbar flexbox has-space-between has-alignitem-center">
       <div class="navbar_left flexbox">
-        <router-link class="flexbox has-alignitem-center" to="/"><img class="logo_img" :class="{ 'is-active': isActive }" src="../assets/images/logo.png" /></router-link>
+        <router-link class="flexbox has-alignitem-center" to="/"><img class="logo_img" @click="isActive=false" :class="{ 'is-active': isActive }" src="../assets/images/logo.png" /></router-link>
         <div class="navbar_left-items flexbox has-alignitem-center">
           <router-link class="navbar_left-item" to="/about">about</router-link>
           <router-link class="navbar_left-item" to="/contact">contact</router-link>
@@ -11,13 +11,13 @@
       <div class="navbar_right">
         <div class="sns">
           <a class="sns_icon" href="https://twitter.com/airou_tus">
-            <b-icon pack="fab" icon="twitter" class="twitter" />
+            <b-icon pack="fab" icon="twitter" custom-class="faa-wrench animated-hover" class="twitter" />
           </a>
           <a class="sns_icon">
-            <b-icon pack="fab" icon="facebook-square" class="facebook" />
+            <b-icon pack="fab" icon="facebook-square" custom-class="faa-wrench animated-hover" class="facebook" />
           </a>
           <a class="sns_icon">
-            <b-icon icon="envelope" class="mail" />
+            <b-icon icon="envelope" custom-class="faa-wrench animated-hover" class="mail" />
           </a>
         </div>
       </div>
@@ -62,7 +62,7 @@ export default {
   #header-nav
     width: 100vw
     .navbar
-      margin-top: 32px
+      margin: 32px 0
       &_left
         .logo_img
           position: relative
@@ -87,13 +87,13 @@ export default {
               opacity: 1
           &.is-active
             filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%) 
-            transition: 0.5s
+            transition: .5s
         &-items
-          margin: 0 1rem
-          font-weight: bold
+          margin: 0 16px
+          font-weight: 600
         &-item
-          font-size: 2.3rem
-          margin: 0 1.5rem
+          font-size: 37px
+          margin: 0 24px
           position: relative
           &:visited
             color: #42210b
@@ -117,9 +117,10 @@ export default {
       &_right
         position: relative
         .sns
+          margin-right: 20px
           &_icon
-            font-size: 1.5rem
-            margin: 0 1.5rem
+            font-size: 24px
+            margin: 0 24px
             &:visited
               color: #42210b
     
