@@ -1,5 +1,5 @@
 <template>
-  <div id="contant">
+  <div id="contact">
     contactページ
   </div>
 </template>
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="sass">
-  #contant
+  #contact
 </style>

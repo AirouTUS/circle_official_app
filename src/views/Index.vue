@@ -14,5 +14,5 @@ export default {
 
 <style lang="sass">
   #index
-    font-size: 20px
+    overflow: hidden
 </style>

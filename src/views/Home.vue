@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="top">
     <div class="top">
       <img class="top_img" src="@/assets/images/campus.jpg" />
     </div>
@@ -9,11 +9,7 @@
         <p>Welcome to</p>
         <p>airou</p>
       </div>
-      <router-link to="/recruit">
-        <div class="recruit_box flexbox has-alignitem-center">
-          <p>部員募集中</p>
-        </div>
-      </router-link>
+      <recruit-box class="italic size-1" :custom-text="text" :bg-color="mainBrown" :font-color="mainYellow" />
     </div>
     <div class="news flexbox">
       <div class="news_top">
@@ -24,17 +20,31 @@
         <p>サイトがオープンしました</p>
       </div>
     </div>
+    <about />
+    <contact />
   </div>
 </template>
 
 <script>
+import About from '@/components/About.vue'
+import Contact from '@/components/Contact.vue'
+import RecruitBox from '@/components/RecruitBox.vue'
+
 export default {
-  
+  components: {About, Contact, RecruitBox},
+
+  data: function() {
+    return {
+      text: '部員募集中',
+      mainBrown: 'background-color: #42210b',
+      mainYellow: 'color: #FAF6DD'
+    }
+  }
 }
 </script>
 
 <style lang="sass">
-  #index
+  #top
     position: relative
     width: 100% 
     .top
@@ -88,30 +98,18 @@ export default {
               font-size: 80px
               margin: 30px -12px 62px 0
       .recruit_box
-        background-color: #42210b
-        width: 220px
-        height: 70px
-        margin: 0 auto
-        & > p
-          position: relative
-          color: #fff
-          font-size: 25px
-          font-style: italic
-          font-weight: 900
-          letter-spacing: 3px
-          width: 100%
-          text-align: center
-          padding: 10px 0
-          &:before
-            position: absolute
-            content: ''
-            width: 80%
-            height: 8px
-            left: 8%
-            bottom: 3px
-            border-bottom: 2px solid #fff
-            border-right: 2px solid #fff
-            transform: skew(45deg)
+        &_item
+          & > p
+            &:before
+              position: absolute
+              content: ''
+              width: 65%
+              height: 8px
+              left: 15%
+              bottom: -6px
+              border-bottom: 2px solid #FAF6DD
+              border-right: 2px solid #FAF6DD
+              transform: skew(45deg)
       
     .news
       margin-top: 35px

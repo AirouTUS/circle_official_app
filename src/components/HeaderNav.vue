@@ -4,8 +4,8 @@
       <div class="navbar_left flexbox">
         <router-link class="flexbox has-alignitem-center" to="/"><img class="logo_img" @click="isActive=false" :class="{ 'is-active': isActive }" src="../assets/images/logo.png" /></router-link>
         <div class="navbar_left-items flexbox has-alignitem-center">
-          <router-link class="navbar_left-item" to="/about">about</router-link>
-          <router-link class="navbar_left-item" to="/contact">contact</router-link>
+          <a class="navbar_left-item" v-scroll-to="about">about</a>
+          <a class="navbar_left-item" v-scroll-to="contact">contact</a>
         </div>
       </div>
       <div class="navbar_right">
@@ -33,8 +33,8 @@
       <nav class="nav" v-show="isActive">
         <ul class="nav-toggle flexcolumn has-space-around">
           <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/">HOME</router-link></li>
-          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/about">ABOUT</router-link></li>
-          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/contact">CONTACT</router-link></li>
+          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="#about">ABOUT</router-link></li>
+          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="#contact">CONTACT</router-link></li>
           <!--<li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
           <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>-->
         </ul>
@@ -45,9 +45,11 @@
 
 <script>
 export default {
-  data() {
+  data: function() {
     return {
-      isActive: false,
+      about: '#about',
+      contact: '#contact',
+      isActive: false
     }
   },
   methods: {
