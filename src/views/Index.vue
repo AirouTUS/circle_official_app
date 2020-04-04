@@ -1,8 +1,7 @@
-<template>
-  <div id="index">
-  <header-nav></header-nav>
-  <router-view></router-view>
-  </div>
+<template lang="pug">
+  #index
+    header-nav
+    router-view
 </template>
 
 <script>

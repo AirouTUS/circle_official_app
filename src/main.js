@@ -6,8 +6,8 @@ import './assets/sass/global.sass'
 /*import './assets/sass/common.sass'*/
 import Contentful from './models/Contentful'
 import Buefy from 'buefy'
+import VueScrollTo from 'vue-scrollto'
 
-var VueScrollTo = require('vue-scrollto')
 Vue.use(VueScrollTo)
 
 Vue.config.productionTip = false

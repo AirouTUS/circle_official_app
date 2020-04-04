@@ -1,28 +1,22 @@
-<template>
-  <div id="top">
-    <div class="top">
-      <img class="top_img" src="@/assets/images/campus.jpg" />
-    </div>
-    <div class="content">
-      <img class="content_img" src="@/assets/images/neko.png" />
-      <div class="content_title">
-        <p>Welcome to</p>
-        <p>airou</p>
-      </div>
-      <recruit-box class="italic size-1" :custom-text="text" :bg-color="mainBrown" :font-color="mainYellow" />
-    </div>
-    <div class="news flexbox">
-      <div class="news_top">
-        <p>お知らせ</p>
-        <p>NEWS</p>
-      </div>
-      <div class="news_item flexbox has-alignitem-center">
-        <p>サイトがオープンしました</p>
-      </div>
-    </div>
-    <about />
-    <contact />
-  </div>
+<template lang="pug">
+  #top
+    .top
+      .top_main
+        img.top_img(src='@/assets/images/campus.jpg')
+      .content
+        img.content_img(src='@/assets/images/neko.png')
+        .content_title
+          p Welcome to
+          p airou
+        recruit-box.italic.size-1(:custom-text='text')
+      .news.flexbox
+        .news_top
+          p お知らせ
+          p NEWS
+        .news_item.flexbox.has-alignitem-center
+          p サイトがオープンしました
+      about
+      contact
 </template>
 
 <script>
@@ -34,22 +28,20 @@ export default {
   components: {About, Contact, RecruitBox},
 
   data: function() {
-    return {
-      text: '部員募集中',
-      mainBrown: 'background-color: #42210b',
-      mainYellow: 'color: #FAF6DD'
+    return{
+      text: "部員募集中"
     }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   #top
-    position: relative
-    width: 100% 
     .top
-      @media screen and (max-width: 960px)
-        text-align: center
+      position: relative
+      &_main
+        @media screen and (max-width: 960px)
+          text-align: center
       &_img
         width: 80%
         height: 600px
@@ -62,86 +54,92 @@ export default {
           width: 80%
           margin-top: -45px
 
-    .content
-      position: absolute
-      top: 156px
-      right: 80px
-      @media screen and (max-width: 960px)
-        left: 0
-        right: 0
-        margin: auto
-      &_img
-        width: 90px
-        height: auto
-        display: block
-        margin: 0 auto
-        @media screen and (max-width: 960px) 
-          margin: 0 60%
-      &_title
-        text-align: center
-        & > p
-          &:nth-child(1)
-            font-size: 40px
-            margin-top: 60px
-            margin-right: -5px
-            word-spacing: 18px
-            letter-spacing: 5px
-            @media screen and (max-width: 560px) 
-              font-size: 30px
-          &:nth-child(2)
-            font-size: 96px
-            letter-spacing: 14px
-            margin: 30px -12px 80px 0
-            @media screen and (max-width: 960px)
-              margin: 10px -12px 50px 0 
+      .content
+        position: absolute
+        top: 156px
+        right: 80px
+        @media screen and (max-width: 960px)
+          left: 0
+          right: 0
+          margin: auto
+        &_img
+          width: 90px
+          height: auto
+          display: block
+          margin: 0 auto
+          @media screen and (max-width: 960px) 
+            margin: 0 60%
+        &_title
+          text-align: center
+          & > p
+            &:nth-child(1)
+              font-size: 40px
+              margin-top: 60px
+              margin-right: -5px
+              word-spacing: 18px
+              letter-spacing: 5px
+              @media screen and (max-width: 560px) 
+                font-size: 30px
+            &:nth-child(2)
+              font-size: 96px
+              letter-spacing: 14px
+              margin: 30px -12px 80px 0
+              @media screen and (max-width: 960px)
+                margin: 10px -12px 50px 0 
+              @media screen and (max-width: 560px)
+                font-size: 80px
+                margin: 30px -12px 62px 0
+
+      .news
+        margin-top: 35px
+        @media screen and (max-width: 560px)
+          flex-direction: column
+          align-items: center
+          margin-top: 50px
+        &_top
+          margin: 0 40px
+          & > p
+            line-height: 1.25
             @media screen and (max-width: 560px)
-              font-size: 80px
-              margin: 30px -12px 62px 0
-      .recruit_box
+              text-align: center
+              line-height: 1.5
+            &:nth-child(1)
+              font-size: 28px
+              font-weight: 500
+              @media screen and (max-width: 560px)
+                font-size: 19px
+            &:nth-child(2)
+              font-size: 18px
+              transform: translateX(3px)
+              @media screen and (max-width: 560px)
+                font-size: 13px
+                transform: translateX(1.5px) 
         &_item
           & > p
-            &:before
-              position: absolute
-              content: ''
-              width: 65%
-              height: 8px
-              left: 15%
-              bottom: -6px
-              border-bottom: 2px solid #FAF6DD
-              border-right: 2px solid #FAF6DD
-              transform: skew(45deg)
-      
-    .news
-      margin-top: 35px
-      @media screen and (max-width: 560px)
-        flex-direction: column
-        align-items: center
-        margin-top: 50px
-      &_top
-        margin: 0 40px
-        & > p
-          line-height: 1.25
-          @media screen and (max-width: 560px)
-            text-align: center
-            line-height: 1.5
-          &:nth-child(1)
-            font-size: 28px
-            font-weight: 500
+            font-size: 20px 
             @media screen and (max-width: 560px)
-              font-size: 19px
-          &:nth-child(2)
-            font-size: 18px
-            transform: translateX(3px)
-            @media screen and (max-width: 560px)
-              font-size: 13px
-              transform: translateX(1.5px) 
-      &_item
-        & > p
-          font-size: 20px 
-          @media screen and (max-width: 560px)
-            font-size: 15px
-            margin-top: 20px
-        
+              font-size: 15px
+              margin-top: 20px
 
-      
+</style>
+
+<style lang="sass">
+#top
+  .content
+    .recruit_box
+      &_item
+        background-color: #42210b
+        & > p
+          color: #FAF6DD 
+          &:before
+            position: absolute
+            content: ''
+            width: 65%
+            height: 8px
+            left: 15%
+            bottom: -10px
+            border-bottom: 2px solid #FAF6DD
+            border-right: 2px solid #FAF6DD
+            transform: skew(45deg)
+  
 </style>

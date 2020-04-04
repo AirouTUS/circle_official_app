@@ -1,23 +1,20 @@
-<template>
-  <div class="about_active">
-    <div class="about_active_item">
-      <span>{{ activeTitle }}</span>
-      <span class="bold">{{ activeText }}</span>
-    </div>
-  </div>
-  
+<template lang="pug">
+  .about_active
+    .about_active_item
+      span {{ title }}
+      span.bold {{ text }}
 </template>
 
 <script>
 export default {
   props: {
-    activeTitle: String,
-    activeText: String
+    title: String,
+    text: String
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .about_active
     &_item
       margin-bottom: 40px
@@ -27,7 +24,5 @@ export default {
           background-color: #42210b
           padding: 10px
           margin-right: 20px
-        &:nth-last-child(2)
-          
     
 </style>

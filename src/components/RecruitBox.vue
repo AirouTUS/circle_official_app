@@ -1,11 +1,8 @@
-<template>
-  <div class="recruit_box">
-    <router-link to="/recruit">
-      <div class="recruit_box_item flexbox has-alignitem-center bold size-3" :style="bgColor">
-        <p :style="fontColor">{{ customText }}</p>
-      </div>
-    </router-link>
-  </div>
+<template lang="pug">
+  .recruit_box
+    router-link(to='/recruit')
+      .recruit_box_item.flexbox.has-alignitem-center.bold
+        p {{ customText }} 
 </template>
 
 <script>
@@ -13,18 +10,12 @@ export default {
   props: {
     customText: {
       type: String
-    },
-    bgColor: {
-      type: String,
-    },
-    fontColor: {
-      type: String
     }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .recruit_box
     margin: 0 auto
     &_item
@@ -33,6 +24,7 @@ export default {
       margin: 0 auto
       border: 2px solid #42210b
       & > p
+        font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic,'Yu Gothic',sans-serif
         position: relative
         letter-spacing: 3px
         text-indent: 3px

@@ -1,17 +1,14 @@
-<template>
-  <div id="about">
-    <div class="about">
-      <img class="about_img" src="@/assets/images/about.png" >
-      <div class="about_content">
-        <p class="about_content_text size-3 bold">はじめまして！学生団体airouです<br>
-        当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
-        </p>
-        <about-active :active-title="placeTitle" :active-text="place" />
-        <about-active :active-title="contentTitle" :active-text="content" />
-        <recruit-box :custom-text="text" :font-color="mainBrown" />
-      </div> 
-    </div>
-  </div>
+<template lang="pug">
+  #about
+    .about
+      img.about_img(src='@/assets/images/about.png')
+      .about_content
+        p.about_content_text.size-2.bold
+          | はじめまして！学生団体airouです
+          br
+          | 当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
+        about-active(v-for='information in informations' :key='information.id' :title='information.title' :text='information.content')
+        recruit-box.size-2(:custom-text="text")
 </template>
 
 <script>
@@ -23,18 +20,24 @@ export default {
 
   data: function() {
     return {
-      placeTitle: '活動場所',
-      contentTitle: '活動内容',
-      place: '東京理科大学 葛飾キャンパス',
-      content: 'プログラミング学習支援',
-      text: '一緒に活動したい！',
-      mainBrown: 'color: #42210b'
+      informations: [
+        {
+          id: 1,
+          title: "活動場所",
+          content: "東京理科大学 葛飾キャンパス"
+        }, {
+          id: 2,
+          title: "活動内容",
+          content: "プログラミング学習支援"
+        }
+      ],
+      text: "一緒に活動したい！"
     }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   #about
     .about
       position: relative
@@ -60,8 +63,14 @@ export default {
           letter-spacing: 3px
           margin-bottom: 50px
         .recruit_box
-          font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic,'Yu Gothic',sans-serif
-          margin-top: 80px
-            
+          margin-top: 100px
 
+</style>
+
+<style lang="sass">
+  #about
+    .recruit_box
+      &_item
+        & > p
+          color: #42210b
 </style>
