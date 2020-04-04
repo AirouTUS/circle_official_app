@@ -1,53 +1,44 @@
-<template>
-  <div id="header-nav">
-    <div class="navbar flexbox has-space-between has-alignitem-center">
-      <div class="navbar_left flexbox">
-        <router-link class="flexbox has-alignitem-center" to="/"><img class="logo_img" @click="isActive=false" :class="{ 'is-active': isActive }" src="../assets/images/logo.png" /></router-link>
-        <div class="navbar_left-items flexbox has-alignitem-center">
-          <router-link class="navbar_left-item" to="/about">about</router-link>
-          <router-link class="navbar_left-item" to="/contact">contact</router-link>
-        </div>
-      </div>
-      <div class="navbar_right">
-        <div class="sns">
-          <a class="sns_icon" href="https://twitter.com/airou_tus">
-            <b-icon pack="fab" icon="twitter" custom-class="faa-wrench animated-hover" class="twitter" />
-          </a>
-          <a class="sns_icon">
-            <b-icon pack="fab" icon="facebook-square" custom-class="faa-wrench animated-hover" class="facebook" />
-          </a>
-          <a class="sns_icon">
-            <b-icon icon="envelope" custom-class="faa-wrench animated-hover" class="mail" />
-          </a>
-        </div>
-      </div>
-    
-      <div class="burger-items" @click="changeNavbarActive" :class="{ 'is-active': isActive }">
-        <span class="top"></span>
-        <span class="middle"></span>
-        <span class="bottom"></span>
-      </div>
-    </div>
-    
-    <transition name="nav">
-      <nav class="nav" v-show="isActive">
-        <ul class="nav-toggle flexcolumn has-space-around">
-          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/">HOME</router-link></li>
-          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/about">ABOUT</router-link></li>
-          <li class="nav-toggle-item flexbox has-alignitem-center" @click="changeNavbarActive"><router-link to="/contact">CONTACT</router-link></li>
-          <!--<li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
-          <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>-->
-        </ul>
-      </nav>
-    </transition>
-  </div>
+<template lang="pug">
+  #header-nav
+    .navbar.flexbox.has-space-between.has-alignitem-center
+      .navbar_left.flexbox
+        router-link.flexbox.has-alignitem-center(to='/')
+          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src='../assets/images/logo.png')
+        .navbar_left-items.flexbox.has-alignitem-center
+          router-link.navbar_left-item(v-scroll-to="'#about'" to='/#about') about
+          router-link.navbar_left-item(v-scroll-to="'#contact'" to='/#contact') contact
+      .navbar_right
+        .sns
+          a.sns_icon(href='https://twitter.com/airou_tus')
+            b-icon.twitter(pack='fab' icon='twitter' custom-class='faa-wrench animated-hover')
+          a.sns_icon
+            b-icon.facebook(pack='fab' icon='facebook-square' custom-class='faa-wrench animated-hover')
+          a.sns_icon
+            b-icon.mail(icon='envelope' custom-class='faa-wrench animated-hover')
+      .burger-items(@click='changeNavbarActive' :class="{ 'is-active': isActive }")
+        span.top
+        span.middle
+        span.bottom
+    transition(name='nav')
+      nav.nav(v-show='isActive')
+        ul.nav-toggle.flexcolumn.has-space-around
+          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
+            router-link(to='/') HOME
+          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
+            router-link(v-scroll-to="'#about'" to='/#about') ABOUT
+          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
+            router-link(v-scroll-to="'#contact'" to='/#contact') CONTACT
+          //
+            <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
+            <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>
+ 
 </template>
 
 <script>
 export default {
-  data() {
+  data: function() {
     return {
-      isActive: false,
+      isActive: false
     }
   },
   methods: {
