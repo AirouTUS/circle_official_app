@@ -1,13 +1,13 @@
 <template lang="pug">
   #about
     .about
-      img.about_img(src='@/assets/images/about.png')
+      img.about_img(src="@/assets/images/about.png")
       .about_content
         p.about_content_text.size-2.bold
           | はじめまして！学生団体airouです
           br
           | 当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
-        about-active(v-for='information in informations' :key='information.id' :title='information.title' :text='information.content')
+        about-active(v-for="information in informations" :key="information.id" :title="information.title" :text="information.content")
         recruit-box.size-2(:custom-text="text")
 </template>
 
@@ -41,7 +41,7 @@ export default {
   #about
     .about
       position: relative
-      margin: 100px 0
+      margin: 120px 0
       &_img
         position: relative
         width: 250px

@@ -2,32 +2,27 @@
   #header-nav
     .navbar.flexbox.has-space-between.has-alignitem-center
       .navbar_left.flexbox
-        router-link.flexbox.has-alignitem-center(to='/')
-          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src='../assets/images/logo.png')
-        .navbar_left-items.flexbox.has-alignitem-center
-          router-link.navbar_left-item(v-scroll-to="'#about'" to='/#about') about
-          router-link.navbar_left-item(v-scroll-to="'#contact'" to='/#contact') contact
+        router-link.flexbox.has-alignitem-center(to="/")
+          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src="../assets/images/logo.png")
+        .navbar_left-items.flexbox.has-alignitem-center.bold
+          router-link.navbar_left-item(v-scroll-to="'#about'" to="/#about") about
+          router-link.navbar_left-item(v-scroll-to="'#contact'" to="/#contact") contact
       .navbar_right
         .sns
-          a.sns_icon(href='https://twitter.com/airou_tus')
-            b-icon.twitter(pack='fab' icon='twitter' custom-class='faa-wrench animated-hover')
-          a.sns_icon
-            b-icon.facebook(pack='fab' icon='facebook-square' custom-class='faa-wrench animated-hover')
-          a.sns_icon
-            b-icon.mail(icon='envelope' custom-class='faa-wrench animated-hover')
+          sns-icon(v-for="item in items" :key="item.id" :src="item.src" :pack="item.pack" :icon="item.icon")
       .burger-items(@click='changeNavbarActive' :class="{ 'is-active': isActive }")
         span.top
         span.middle
         span.bottom
-    transition(name='nav')
-      nav.nav(v-show='isActive')
+    transition(name="nav")
+      nav.nav.flexbox.has-alignitem-center(v-show='isActive')
         ul.nav-toggle.flexcolumn.has-space-around
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(to='/') HOME
+            router-link(to="/") HOME
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(v-scroll-to="'#about'" to='/#about') ABOUT
+            router-link(v-scroll-to="'#about'" to="/#about") ABOUT
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(v-scroll-to="'#contact'" to='/#contact') CONTACT
+            router-link(v-scroll-to="'#contact'" to="/#contact") CONTACT
           //
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>
@@ -35,10 +30,33 @@
 </template>
 
 <script>
+import SnsIcon from '@/components/SnsIcon.vue'
+
 export default {
+  components: { SnsIcon },
+
   data: function() {
     return {
-      isActive: false
+      isActive: false,
+
+      items: [
+        {
+          id: 1,
+          src: "https://twitter.com/airou_tus",
+          pack: "fab",
+          icon: "twitter"
+        }, {
+          id: 2,
+          src: "",
+          pack: "fab",
+          icon: "facebook-square" 
+        }, {
+          id: 3,
+          src: "",
+          pack: "",
+          icon: "envelope"
+        }
+      ]
     }
   },
   methods: {
@@ -49,7 +67,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   #header-nav
     width: 100vw
     .navbar
@@ -81,7 +99,6 @@ export default {
             transition: .5s
         &-items
           margin: 0 16px
-          font-weight: 600
         &-item
           font-size: 37px
           margin: 0 24px
@@ -104,21 +121,10 @@ export default {
           &:hover
             &:after
               transform: scale(1, 1)
-
-      &_right
-        position: relative
-        .sns
-          margin-right: 20px
-          &_icon
-            font-size: 24px
-            margin: 0 24px
-            &:visited
-              color: #42210b
     
     @media screen and (min-width: 961px) 
       .burger-items
         display: none
-            
     
     @media screen and (max-width: 960px)
       .navbar
@@ -182,9 +188,7 @@ export default {
       left: 0
       position: fixed
       background-color: rgba(128, 128, 128, 1)
-      display: flex
       justify-content: center
-      align-items: center
       z-index: 98
       &-toggle
         z-index: 99 
@@ -213,4 +217,13 @@ export default {
         &-active
           transition: .5s
 
+</style>
+
+<style lang="sass">
+  #header-nav
+    .navbar
+      &_right
+        position: relative
+        .sns
+          margin-right: 20px
 </style>

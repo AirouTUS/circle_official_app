@@ -2,21 +2,23 @@
   #top
     .top
       .top_main
-        img.top_img(src='@/assets/images/campus.jpg')
+        img.top_img(src="@/assets/images/campus.jpg")
       .content
-        img.content_img(src='@/assets/images/neko.png')
+        img.content_img(src="@/assets/images/neko.png")
         .content_title
           p Welcome to
           p airou
-        recruit-box.italic.size-1(:custom-text='text')
+        recruit-box.italic.size-1(:custom-text="text")
       .news.flexbox
         .news_top
           p お知らせ
-          p NEWS
+          p.size-2 NEWS
         .news_item.flexbox.has-alignitem-center
-          p サイトがオープンしました
+          p.size-1 サイトがオープンしました
       about
       contact
+      .footer
+        small &copy; 2020 airou All Right Reserved
 </template>
 
 <script>
@@ -91,11 +93,12 @@ export default {
                 margin: 30px -12px 62px 0
 
       .news
-        margin-top: 35px
+        margin-top: 50px
+        @media screen and (max-width: 960px) 
+          margin-top: 80px
         @media screen and (max-width: 560px)
           flex-direction: column
           align-items: center
-          margin-top: 50px
         &_top
           margin: 0 40px
           & > p
@@ -107,18 +110,16 @@ export default {
               font-size: 28px
               font-weight: 500
               @media screen and (max-width: 560px)
-                font-size: 19px
+                font-size: 1.25rem
             &:nth-child(2)
-              font-size: 18px
               transform: translateX(3px)
               @media screen and (max-width: 560px)
-                font-size: 13px
+                font-size: .875rem
                 transform: translateX(1.5px) 
         &_item
           & > p
-            font-size: 20px 
             @media screen and (max-width: 560px)
-              font-size: 15px
+              font-size: 1rem
               margin-top: 20px
 
 </style>
