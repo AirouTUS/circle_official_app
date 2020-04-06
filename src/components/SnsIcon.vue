@@ -1,5 +1,5 @@
 <template lang="pug">
-  a.sns_icon(:href="src" target="_blank")
+  a.sns_icon(:href="src" target="_blank" rel="noopener")
     b-icon(:pack="pack" :icon="icon" custom-class="faa-wrench animated-hover")
 </template>
 

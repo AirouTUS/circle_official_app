@@ -38,31 +38,30 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  #about
-    .about
+  .about
+    position: relative
+    &_img
       position: relative
-      &_img
-        position: relative
-        width: 250px
-        margin-left: 38px
-        @media screen and (max-width: 960px)
-          display: block
-          margin: 0 auto
-          width: 200px
-      &_content
-        width: 80%
-        margin-top: -40px
-        margin-left: auto
-        padding: 80px 10px 60px
-        background-color: #FAF6DD
-        @media screen and (max-width: 960px) 
-          margin: -25px auto 0
-        &_text
-          line-height: 2
-          letter-spacing: 3px
-          margin-bottom: 50px
-        .recruit_box
-          margin-top: 100px
+      width: 250px
+      margin-left: 38px
+      @media screen and (max-width: 960px)
+        display: block
+        margin: 0 auto
+        width: 200px
+    &_content
+      width: 80%
+      margin-top: -40px
+      margin-left: auto
+      padding: 80px 10px 60px
+      background-color: #FAF6DD
+      @media screen and (max-width: 960px) 
+        margin: -25px auto 0
+      &_text
+        line-height: 2
+        letter-spacing: 3px
+        margin-bottom: 50px
+      .recruit_box
+        margin-top: 100px
 
 </style>
 

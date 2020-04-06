@@ -43,21 +43,19 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '@/assets/sass/constants.sass' 
-  #contact
-    .contact
-      text-align: center
-      &_img
-        width: 250px
-        @media screen and (max-width: 960px)
-          width: 200px
-      &_content
-        margin-bottom: 100px
-        &_text
-          margin: 50px 0
-          letter-spacing: 3px
-          @media screen and (max-width: 560px) 
-            font-size: $size-3
-      &_foot_img
-        width: 90px
+  .contact
+    text-align: center
+    &_img
+      width: 250px
+      @media screen and (max-width: 960px)
+        width: 200px
+    &_content
+      margin-bottom: 100px
+      &_text
+        margin: 50px 0
+        letter-spacing: 3px
+        @media screen and (max-width: 560px) 
+          font-size: $size-3
+    &_foot_img
+      width: 90px
 </style>
