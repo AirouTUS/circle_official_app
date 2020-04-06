@@ -18,11 +18,11 @@
       nav.nav.flexbox.has-alignitem-center(v-show='isActive')
         ul.nav-toggle.flexcolumn.has-space-around
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(to="/") HOME
+            router-link.text-white(to="/") HOME
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(v-scroll-to="'#about'" to="/#about") ABOUT
+            router-link.text-white(v-scroll-to="'#about'" to="/#about") ABOUT
           li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link(v-scroll-to="'#contact'" to="/#contact") CONTACT
+            router-link.text-white(v-scroll-to="'#contact'" to="/#contact") CONTACT
           //
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>
@@ -72,7 +72,6 @@ export default {
     margin: 32px 0
     &_left
       .logo_img
-        position: relative
         width: 140px
         margin-left: 20px 
         cursor: pointer
@@ -93,14 +92,13 @@ export default {
           100%
             opacity: 1
         &.is-active
-          filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%) 
+          filter: invert(88%) sepia(91%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%) 
           transition: .5s
       &-items
         margin: 0 16px
       &-item
         font-size: 37px
         margin: 0 24px
-        position: relative
         &:visited
           color: #42210b
         &:after
@@ -119,6 +117,9 @@ export default {
         &:hover
           &:after
             transform: scale(1, 1)
+    &right
+      .sns
+        margin-right: 20px
     
   @media screen and (min-width: 961px) 
     .burger-items
@@ -156,7 +157,7 @@ export default {
       &.is-active
         & > span 
           transition: .5s
-          background-color: #EEE
+          background-color: $white
           &.top
             transform: rotate(45deg)
             top: 50%
@@ -197,11 +198,8 @@ export default {
         font-size: 40px
         height: 60px
         &:hover
-          outline: 2px solid #EEEEEE
+          outline: 2px solid $white
           transition: .2s
-        a
-          color: #EEEEEE
-          position: relative
     &-enter
       opacity: 0
       &-to
@@ -215,13 +213,4 @@ export default {
       &-active
         transition: .5s
 
-</style>
-
-<style lang="sass">
-  #header-nav
-    .navbar
-      &_right
-        position: relative
-        .sns
-          margin-right: 20px
 </style>

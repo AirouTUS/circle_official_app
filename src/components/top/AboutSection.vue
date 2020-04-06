@@ -39,9 +39,7 @@ export default {
 
 <style lang="sass" scoped>
   .about
-    position: relative
     &_img
-      position: relative
       width: 250px
       margin-left: 38px
       @media screen and (max-width: 960px)

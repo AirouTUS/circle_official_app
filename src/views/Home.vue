@@ -120,12 +120,6 @@ export default {
             font-size: $size-3
             margin-top: 20px
 
-    #about
-      margin: 120px 0
-
-    #contact
-      margin-bottom: 80px
-
     .footer
       text-align: center
       margin-bottom: 40px
@@ -135,20 +129,25 @@ export default {
 <style lang="sass">
   #top
     .content
-      .recruit_box
-        &_item
-          background-color: #42210b
-          & > p
-            color: #FAF6DD 
-            &:before
-              position: absolute
-              content: ''
-              width: 65%
-              height: 8px
-              left: 15%
-              bottom: -10px
-              border-bottom: 2px solid #FAF6DD
-              border-right: 2px solid #FAF6DD
-              transform: skew(45deg)
+      .recruit_box_item
+        background-color: #42210b
+        & > p
+          color: #FAF6DD 
+          &:before
+            position: absolute
+            content: ''
+            width: 65%
+            height: 8px
+            left: 15%
+            bottom: -10px
+            border-bottom: 2px solid #FAF6DD
+            border-right: 2px solid #FAF6DD
+            transform: skew(45deg)
+  
+  #about
+    margin: 120px 0
+
+  #contact
+    margin-bottom: 80px
   
 </style>
