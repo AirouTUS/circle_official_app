@@ -3,7 +3,7 @@
     .navbar.flexbox.has-space-between.has-alignitem-center
       .navbar_left.flexbox
         router-link.flexbox.has-alignitem-center(to="/")
-          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src="../assets/images/logo.png")
+          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src="@/assets/images/logo.png")
         .navbar_left-items.flexbox.has-alignitem-center.bold
           router-link.navbar_left-item(v-scroll-to="'#about'" to="/#about") about
           router-link.navbar_left-item(v-scroll-to="'#contact'" to="/#contact") contact

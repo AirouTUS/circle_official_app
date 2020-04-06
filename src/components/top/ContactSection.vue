@@ -43,9 +43,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '@/assets/sass/constants.sass' 
   #contact
     .contact
-      margin-bottom: 80px 
       text-align: center
       &_img
         width: 250px
@@ -57,7 +57,7 @@ export default {
           margin: 50px 0
           letter-spacing: 3px
           @media screen and (max-width: 560px) 
-            font-size: 1rem
+            font-size: $size-3
       &_foot_img
         width: 90px
 </style>

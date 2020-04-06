@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import About from '@/components/About.vue'
-import Contact from '@/components/Contact.vue'
+import About from '@/components/top/AboutSection.vue'
+import Contact from '@/components/top/ContactSection.vue'
 import RecruitBox from '@/components/RecruitBox.vue'
 
 export default {
@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '@/assets/sass/constants.sass'
   #top
     .top
       position: relative
@@ -108,19 +109,28 @@ export default {
               line-height: 1.5
             &:nth-child(1)
               font-size: 28px
-              font-weight: 500
               @media screen and (max-width: 560px)
-                font-size: 1.25rem
+                font-size: $size-1
             &:nth-child(2)
               transform: translateX(3px)
               @media screen and (max-width: 560px)
-                font-size: .875rem
+                font-size: $size-4
                 transform: translateX(1.5px) 
         &_item
           & > p
             @media screen and (max-width: 560px)
-              font-size: 1rem
+              font-size: $size-3
               margin-top: 20px
+
+      #about
+        margin: 120px 0
+
+      #contact
+        margin-bottom: 80px
+
+      .footer
+        text-align: center
+        margin-bottom: 40px
 
 </style>
 

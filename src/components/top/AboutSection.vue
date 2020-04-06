@@ -41,7 +41,6 @@ export default {
   #about
     .about
       position: relative
-      margin: 120px 0
       &_img
         position: relative
         width: 250px
