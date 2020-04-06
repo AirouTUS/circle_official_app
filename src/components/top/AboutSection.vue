@@ -1,13 +1,13 @@
 <template lang="pug">
   #about
     .about
-      img.about_img(src='@/assets/images/about.png')
+      img.about_img(src="@/assets/images/about.png")
       .about_content
         p.about_content_text.size-2.bold
           | はじめまして！学生団体airouです
           br
           | 当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
-        about-active(v-for='information in informations' :key='information.id' :title='information.title' :text='information.content')
+        about-active(v-for="information in informations" :key="information.id" :title="information.title" :text="information.content")
         recruit-box.size-2(:custom-text="text")
 </template>
 
@@ -38,32 +38,28 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  #about
-    .about
-      position: relative
-      margin: 100px 0
-      &_img
-        position: relative
-        width: 250px
-        margin-left: 38px
-        @media screen and (max-width: 960px)
-          display: block
-          margin: 0 auto
-          width: 200px
-      &_content
-        width: 80%
-        margin-top: -40px
-        margin-left: auto
-        padding: 80px 10px 60px
-        background-color: #FAF6DD
-        @media screen and (max-width: 960px) 
-          margin: -25px auto 0
-        &_text
-          line-height: 2
-          letter-spacing: 3px
-          margin-bottom: 50px
-        .recruit_box
-          margin-top: 100px
+  .about
+    &_img
+      width: 250px
+      margin-left: 38px
+      @media screen and (max-width: 960px)
+        display: block
+        margin: 0 auto
+        width: 200px
+    &_content
+      width: 80%
+      margin-top: -40px
+      margin-left: auto
+      padding: 80px 10px 60px
+      background-color: #FAF6DD
+      @media screen and (max-width: 960px) 
+        margin: -25px auto 0
+      &_text
+        line-height: 2
+        letter-spacing: 3px
+        margin-bottom: 50px
+      .recruit_box
+        margin-top: 100px
 
 </style>
 

@@ -1,6 +1,6 @@
 <template lang="pug">
   .recruit_box
-    router-link(to='/recruit')
+    router-link(to="/recruit")
       .recruit_box_item.flexbox.has-alignitem-center.bold
         p {{ customText }} 
 </template>
