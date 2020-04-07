@@ -4,27 +4,27 @@
       .navbar_left.flexbox
         router-link.flexbox.has-alignitem-center(to="/")
           img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src="@/assets/images/logo.png")
-        .navbar_left-items.flexbox.has-alignitem-center.bold
-          router-link.navbar_left-item(v-scroll-to="'#about'" to="/#about") about
-          router-link.navbar_left-item(v-scroll-to="'#contact'" to="/#contact") contact
+        .navbar_left_items.flexbox.has-alignitem-center.bold
+          router-link.navbar_left_item(v-scroll-to="'#about'" to="/#about") about
+          router-link.navbar_left_item(v-scroll-to="'#contact'" to="/#contact") contact
       .navbar_right
         .sns
           sns-icon(v-for="item in items" :key="item.id" :src="item.src" :pack="item.pack" :icon="item.icon")
-      .burger-items(@click='changeNavbarActive' :class="{ 'is-active': isActive }")
+      .burger_items(@click='multipleActive()' :class="{ 'is-active': isActive }" v-scroll-lock="lock")
         span.top
         span.middle
         span.bottom
     transition(name="nav")
       nav.nav.flexbox.has-alignitem-center(v-show='isActive')
-        ul.nav-toggle.flexcolumn.has-space-around
-          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link.text-white(to="/") HOME
-          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link.text-white(v-scroll-to="'#about'" to="/#about") ABOUT
-          li.nav-toggle-item.flexbox.has-alignitem-center(@click='changeNavbarActive')
-            router-link.text-white(v-scroll-to="'#contact'" to="/#contact") CONTACT
-          //
-            <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
+        ul.nav_toggle.flexcolumn.has-space-around
+          li.nav_toggle_item(@click='multipleActive()')
+            router-link.text-white.flexbox.has-alignitem-center(to="/") HOME
+          li.nav_toggle_item(@click='multipleActive()')
+            router-link.text-white.flexbox.has-alignitem-center(v-scroll-to="'#about'" to="/#about") ABOUT
+          li.nav_toggle_item(@click='multipleActive()')
+            router-link.text-white.flexbox.has-alignitem-center(v-scroll-to="'#contact'" to="/#contact") CONTACT
+          
+          //<li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>
  
 </template>
@@ -38,6 +38,7 @@ export default {
   data: function() {
     return {
       isActive: false,
+      lock: false,
 
       items: [
         {
@@ -60,8 +61,15 @@ export default {
     }
   },
   methods: {
+    multipleActive: function() {
+      this.changeNavbarActive()
+      this.scrollLock()
+    },
     changeNavbarActive: function() {
       this.isActive = !this.isActive;
+    },
+    scrollLock: function() {
+      this.lock = !this.lock;
     }
   }
 }
@@ -94,11 +102,12 @@ export default {
         &.is-active
           filter: invert(88%) sepia(91%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%) 
           transition: .5s
-      &-items
+      &_items
         margin: 0 16px
-      &-item
+      &_item
         font-size: 37px
         margin: 0 24px
+        position: relative
         &:visited
           color: #42210b
         &:after
@@ -122,18 +131,18 @@ export default {
         margin-right: 20px
     
   @media screen and (min-width: 961px) 
-    .burger-items
+    .burger_items
       display: none
     
   @media screen and (max-width: 960px)
     .navbar
       &_left
-        &-items
+        &_items
           display: none
     .sns
       display: none
 
-    .burger-items 
+    .burger_items 
       width: 40px
       height: 30px
       margin-right: 30px
@@ -175,7 +184,7 @@ export default {
           width: 100px
           margin-left: 20px
 
-    .burger-items
+    .burger_items
       width: 35px
       height: 25px
       margin-right: 20px
@@ -189,17 +198,23 @@ export default {
     background-color: rgba(128, 128, 128, 1)
     justify-content: center
     z-index: 98
-    &-toggle
+    &_toggle
       z-index: 99 
       width: 250px
       height: 400px
-      &-item
-        justify-content: center
-        font-size: 40px
-        height: 60px
-        &:hover
-          outline: 2px solid $white
-          transition: .2s
+      @media screen and (max-width: 560px)
+        width: 200px
+      &_item
+        & > a
+          justify-content: center
+          font-size: 40px
+          width: 100%
+          height: 60px
+          @media screen and (max-width: 560px)
+            font-size: 25px
+          &:hover
+            outline: 2px solid $white
+
     &-enter
       opacity: 0
       &-to
