@@ -7,10 +7,15 @@ import './assets/sass/global.sass'
 import Contentful from './models/Contentful'
 import Buefy from 'buefy'
 import VueScrollTo from 'vue-scrollto'
-
-Vue.use(VueScrollTo)
+import VScrollLock from 'v-scroll-lock'
 
 Vue.config.productionTip = false
+
+Vue.use(VScrollLock)
+
+Vue.use(VueScrollTo, {
+  offset: -30
+})
 
 Vue.use(Buefy, {
   defaultIconPack: 'fas'
