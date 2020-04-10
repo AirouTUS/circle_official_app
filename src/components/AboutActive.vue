@@ -1,7 +1,7 @@
 <template lang="pug">
   .about_active
     .about_active_item
-      span {{ title }}
+      span.bg-brown {{ title }}
       span.bold {{ text }}
 </template>
 
@@ -19,9 +19,10 @@ export default {
     &_item
       margin-bottom: 40px
       & > span
+        @media screen and (max-width: 560px)
+          font-size: $size-5
         &:nth-child(1)
-          color: #FAF6DD
-          background-color: #42210b
+          color: $m-yellow
           padding: 10px
           margin-right: 20px
     
