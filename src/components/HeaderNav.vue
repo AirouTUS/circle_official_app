@@ -109,7 +109,7 @@ export default {
         margin: 0 24px
         position: relative
         &:visited
-          color: #42210b
+          color: $m-brown
         &:after
             position: absolute
             display: inline-block
@@ -118,7 +118,7 @@ export default {
             content: ''
             width: 100%
             height: 3px
-            background: #42210b
+            background: $m-brown
             border-radius: 5px
             transform: scale(0, 1)
             transform-origin: center top

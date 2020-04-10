@@ -22,7 +22,7 @@ export default {
       width: 220px
       height: 70px
       margin: 0 auto
-      border: 2px solid #42210b
+      border: 2px solid $m-brown
       & > p
         font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic,'Yu Gothic',sans-serif
         position: relative

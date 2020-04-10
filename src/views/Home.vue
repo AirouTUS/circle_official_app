@@ -130,9 +130,9 @@ export default {
   #top
     .content
       .recruit_box_item
-        background-color: #42210b
+        background-color: $m-brown
         & > p
-          color: #FAF6DD 
+          color: $m-yellow
           &:before
             position: absolute
             content: ''
@@ -140,12 +140,12 @@ export default {
             height: 8px
             left: 15%
             bottom: -10px
-            border-bottom: 2px solid #FAF6DD
-            border-right: 2px solid #FAF6DD
+            border-bottom: 2px solid $m-yellow
+            border-right: 2px solid $m-yellow
             transform: skew(45deg)
   
   #about
-    margin: 120px 0
+    margin: 120px 0 200px
 
   #contact
     margin-bottom: 80px

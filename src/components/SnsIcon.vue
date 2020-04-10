@@ -24,5 +24,5 @@ export default {
 		font-size: 24px
 		margin: 0 24px
 		&:visited
-			color: #42210b
+			color: $m-brown
 </style>
