@@ -1,14 +1,31 @@
 @import 'constants'
 
+/* josefin-sans-regular - latin */
+@font-face 
+  font-display: swap
+  font-family: 'Josefin Sans'
+  font-style: normal
+  font-weight: 400
+  src: local('Josefin Sans')
+  src: url('../fonts/josefin-sans-v15-latin-regular.woff2') format('woff2')
+
+/* josefin-sans-100italic - latin */
+@font-face 
+  font-display: swap
+  font-family: 'Josefin Sans Italic'
+  font-style: italic
+  font-weight: 100
+  src: url('../fonts/josefin-sans-v15-latin-100italic.woff2') format('woff2')
+
 html
   font-size: 16px
   height: 100%
   
 body
-  color: #42210b
+  color: $m-brown
   line-height: 1
   box-sizing: border-box
-  font-family: Josefin Sans
+  font-family: "Josefin Sans"
   height: 100%
   margin: 0
   padding: 0
@@ -16,6 +33,7 @@ body
 a
   text-decoration: none
   cursor: pointer
+  color: $m-brown
 
 nav ul
   list-style: none
@@ -46,6 +64,10 @@ p
 
 .text-white
   color: $white
+.text-brown
+  color: $m-brown
+.text-yellow
+  color: $m-yellow
 .bg-brown
   background-color: $m-brown
 .bg-yellow

@@ -23,6 +23,4 @@ export default {
 	.sns_icon
 		font-size: 24px
 		margin: 0 24px
-		&:visited
-			color: $m-brown
 </style>

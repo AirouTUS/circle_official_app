@@ -1,8 +1,7 @@
 <template lang="pug">
   .about_active
-    .about_active_item
-      span.bg-brown {{ title }}
-      span.bold {{ text }}
+    span.bg-brown.text-yellow {{ title }}
+    span.bold {{ text }}
 </template>
 
 <script>
@@ -16,14 +15,11 @@ export default {
 
 <style lang="sass" scoped>
   .about_active
-    &_item
-      margin-bottom: 40px
-      & > span
-        @media screen and (max-width: 560px)
-          font-size: $size-5
-        &:nth-child(1)
-          color: $m-yellow
-          padding: 10px
-          margin-right: 20px
+    & > span
+      @media screen and (max-width: 560px)
+        font-size: 10px
+      &:nth-child(1)
+        padding: 10px
+        margin-right: 20px
     
 </style>

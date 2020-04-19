@@ -27,12 +27,12 @@ export default {
             icon: "twitter"
           }, {
             id: 2,
-            src: "",
+            src: "https://github.com/AirouTUS",
             pack: "fab",
-            icon: "facebook-square" 
+            icon: "github" 
           }, {
             id: 3,
-            src: "",
+            src: "mailto:airou.tus@gmail.com",
             pack: "",
             icon: "envelope"
           }
