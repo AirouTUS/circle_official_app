@@ -3,8 +3,8 @@
     .navbar.flexbox.has-space-between.has-alignitem-center
       .navbar_left.flexbox
         router-link.flexbox.has-alignitem-center(to="/")
-          img.logo_img(@click='isActive=false' :class="{ 'is-active': isActive }" src="@/assets/images/logo.png")
-        .navbar_left_items.flexbox.has-alignitem-center.bold
+          img.logo_img(@click='isActive=false; lock=false' :class="{ 'is-active': isActive }" src="@/assets/images/logo.png")
+        .navbar_left_items.flexbox.has-alignitem-center
           router-link.navbar_left_item(v-scroll-to="'#about'" to="/#about") about
           router-link.navbar_left_item(v-scroll-to="'#contact'" to="/#contact") contact
       .navbar_right
@@ -48,12 +48,12 @@ export default {
           icon: "twitter"
         }, {
           id: 2,
-          src: "",
+          src: "https://github.com/AirouTUS",
           pack: "fab",
-          icon: "facebook-square" 
+          icon: "github" 
         }, {
           id: 3,
-          src: "",
+          src: "mailto:airou.tus@gmail.com",
           pack: "",
           icon: "envelope"
         }
@@ -105,11 +105,9 @@ export default {
       &_items
         margin: 0 16px
       &_item
-        font-size: 37px
+        font-size: 34px
         margin: 0 24px
         position: relative
-        &:visited
-          color: $m-brown
         &:after
             position: absolute
             display: inline-block

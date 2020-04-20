@@ -1,20 +1,18 @@
 <template lang="pug">
   #about
     .about
-      img.about_img(src="@/assets/images/about.png")
       .about_content.bg-yellow
-        p.about_content_text.size-2.bold
-          | はじめまして！学生団体airouです
-          br
-          | 当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
-        about-active(v-for="information in informations" :key="information.id" :title="information.title" :text="information.content")
-        recruit-box.size-2(:custom-text="text")
+        .about_content_image
+          img(src="@/assets/images/about.png")
+        .about_content_main
+          p.about_content_main_text.size-2.bold.flexbox.is-center
+            | はじめまして！学生団体airouです
+            br
+            | 当団体では、プログラミングを中心とした活動を行っており、メンバーを募集しております
+          about-active(v-for="information in informations" :key="information.id" :title="information.title" :text="information.content")
+        //  recruit-box.size-2(:custom-text="text")
       .twitter
-        .twitter_head.flexbox.has-alignitem-center.bg-brown
-          b-icon.size-4(pack="fab" icon="twitter")
-          p.size-1
-            | Twitter
-        a.twitter-timeline(data-width="100%" data-height="400" data-border-color="#42210b" data-chrome="noheader nofooter" :href="twitter_url" target="_blank" rel="noopener")
+        a.twitter-timeline(data-width="100%" data-height="100%" data-chrome="noheader nofooter" :href="twitter_url" target="_blank" rel="noopener")
           | Tweets by airou_tus
         
 </template>
@@ -54,39 +52,52 @@ export default {
 
 <style lang="sass" scoped>
   .about
-    &_img
-      width: 250px
-      display: block
-      margin: 0 auto
-      @media screen and (max-width: 960px)
-        width: 200px
     &_content
       width: 80%
-      margin-top: -40px
       margin-left: auto
-      padding: 80px 10px 60px
       @media screen and (max-width: 960px) 
         margin: -25px auto 0
-      &_text
-        line-height: 2
-        letter-spacing: 3px
-        margin-bottom: 50px
-        @media screen and (max-width: 560px)
-          font-size: $size-5
-      .recruit_box
-        margin-top: 100px
+      &_image
+        text-align: center
+        margin-bottom: 30px
+        & > img
+          width: 250px
+          margin-top: -40px
+          @media screen and (max-width: 960px)
+            width: 200px
+      &_main
+        padding: 0 20px 20px
+        &_text
+          line-height: 2
+          letter-spacing: 3px
+          margin-bottom: 50px
+          @media screen and (max-width: 560px)
+            font-size: $size-5
+        .about_active
+          max-width: 850px
+          margin: 0 auto 40px auto
+
+        .recruit_box
+          margin-top: 100px
+    
     .twitter
       width: 40%
-      margin: 80px auto 0 
-      border: 1px solid $m-brown
-      box-shadow: 0 2px 4px rgba(0, 0, 0, .2)
+      height: 400px
+      margin: 80px auto 
+      border-right-style: solid
+      border-right-color: rgba(15, 70, 100, .12)
+      border-right-width: 1px
+      border-left-style: solid
+      border-left-color: rgba(15, 70, 100, .12)
+      border-left-width: 1px
       @media screen and (max-width: 560px)
         width: 60% 
+      @media screen and (min-width: 2001px)
+        height: 700px 
       &_head
-        color: $m-yellow
         & > span
-          padding: 8px 15px 8px 30px 
-       
+          padding: 8px 15px 8px 30px
+    
 
 </style>
 

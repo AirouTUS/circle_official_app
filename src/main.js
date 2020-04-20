@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.use(VScrollLock)
 
 Vue.use(VueScrollTo, {
-  offset: -30
+  offset: -60
 })
 
 Vue.use(Buefy, {
