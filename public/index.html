@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="preload" as="font" href="../fonts/josefin-sans-v15-latin-regular.woff2" crossorigin>
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" type="image/png" href="<%= BASE_URL %>favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- ogp -->
+    <meta property="og:title" content="airou 公式サイト">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="プログラミングサークル　airou 公式サイト">
+    <meta property="og:url" content="<%= BASE_URL %>">
+    <meta property="og:site_name" content="東京理科大学 WEB新歓">
+    <meta property="og:image" content="<%= BASE_URL %>favicon.png">
+    <!-- twitter ogp -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@airou_tus" />
+    <meta name="twitter:creator" content="@airou_tus" />
+    <meta property="twitter:title" content="airou 公式サイト" />
+    <meta property="twitter:url" content="<%= BASE_URL %>" />
+    <meta property="twitter:description" content="プログラミングサークル　airou 公式サイト" />
+    <meta property="twitter:image" content="<%= BASE_URL %>favicon.png" />
   </head>
   <body>
     <noscript>
