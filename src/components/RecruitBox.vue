@@ -1,7 +1,7 @@
 <template lang="pug">
   .recruit_box
     router-link(v-scroll-to="'#contact'" to="/#contact")
-      .recruit_box_item.flexbox.has-alignitem-center.bold
+      .recruit_box_item.flexbox.has-middle.bold
         p {{ customText }} 
 </template>
 

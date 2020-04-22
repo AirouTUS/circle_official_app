@@ -1,7 +1,9 @@
 <template lang="pug">
-  .about_active
-    span.bg-brown.text-yellow {{ title }}
-    span.bold {{ text }}
+  div.about_active.flexbox.has-middle.size-4
+    div.bg-brown.text-yellow.p-2.mr-3
+      span.text-middle {{ title }}
+    div
+      span.bold.text-middle {{ text }}
 </template>
 
 <script>
@@ -14,12 +16,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  .about_active
-    & > span
-      @media screen and (max-width: 560px)
-        font-size: 10px
-      &:nth-child(1)
-        padding: 10px
-        margin-right: 20px
-    
 </style>

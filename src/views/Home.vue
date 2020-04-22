@@ -12,10 +12,10 @@
             recruit-box.italic.size-1(:custom-text="text")
       .news.flexbox
         .news_top
-          p お知らせ
+          p.size-1 お知らせ
           p.size-2 NEWS
-        .news_item.flexbox.has-alignitem-center
-          p.size-1 サイトがオープンしました
+        .news_item.flexbox.has-middle
+          p.size-2 サイトがオープンしました
       about
       contact
       .footer
@@ -115,15 +115,6 @@ export default {
           @media screen and (max-width: 560px)
             text-align: center
             line-height: 1.5
-          &:nth-child(1)
-            font-size: 28px
-            @media screen and (max-width: 560px)
-              font-size: $size-1
-          &:nth-child(2)
-            transform: translateX(3px)
-            @media screen and (max-width: 560px)
-              font-size: $size-4
-              transform: translateX(1.5px) 
       &_item
         & > p
           @media screen and (max-width: 560px)

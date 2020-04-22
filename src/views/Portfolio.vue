@@ -9,8 +9,3 @@ export default {
 
 }
 </script>
-
-<style lang="sass">
-  #portfolio
-    font-size: 10px
-</style>

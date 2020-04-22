@@ -54,8 +54,6 @@ export default {
       &_text
         margin: 50px 0
         letter-spacing: 3px
-        @media screen and (max-width: 560px) 
-          font-size: $size-3
     &_foot_img
       width: 90px
 </style>

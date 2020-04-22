@@ -1,10 +1,10 @@
 <template lang="pug">
   #header-nav
-    .navbar.flexbox.has-space-between.has-alignitem-center
+    .navbar.flexbox.has-space-between.has-middle
       .navbar_left.flexbox
-        router-link.flexbox.has-alignitem-center(to="/")
+        router-link.flexbox.has-middle(to="/")
           img.logo_img(@click='isActive=false; lock=false' :class="{ 'is-active': isActive }" src="@/assets/images/logo.png")
-        .navbar_left_items.flexbox.has-alignitem-center
+        .navbar_left_items.flexbox.has-middle
           router-link.navbar_left_item(v-scroll-to="'#about'" to="/#about") about
           router-link.navbar_left_item(v-scroll-to="'#contact'" to="/#contact") contact
       .navbar_right
@@ -15,14 +15,14 @@
         span.middle
         span.bottom
     transition(name="nav")
-      nav.nav.flexbox.has-alignitem-center(v-show='isActive')
+      nav.nav.flexbox.has-middle(v-show='isActive')
         ul.nav_toggle.flexcolumn.has-space-around
           li.nav_toggle_item(@click='multipleActive()')
-            router-link.text-white.flexbox.has-alignitem-center(to="/") HOME
+            router-link.text-white.flexbox.has-middle(to="/") HOME
           li.nav_toggle_item(@click='multipleActive()')
-            router-link.text-white.flexbox.has-alignitem-center(v-scroll-to="'#about'" to="/#about") ABOUT
+            router-link.text-white.flexbox.has-middle(v-scroll-to="'#about'" to="/#about") ABOUT
           li.nav_toggle_item(@click='multipleActive()')
-            router-link.text-white.flexbox.has-alignitem-center(v-scroll-to="'#contact'" to="/#contact") CONTACT
+            router-link.text-white.flexbox.has-middle(v-scroll-to="'#contact'" to="/#contact") CONTACT
           
           //<li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/article">ARTICLE</router-link></li>
             <li class="nav-toggle-item" @click="changeNavbarActive"><router-link to="/portfolio">PORTFOLIO</router-link></li>

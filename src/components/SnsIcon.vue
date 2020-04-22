@@ -21,6 +21,6 @@ export default {
 
 <style lang="sass" scoped>
 	.sns_icon
-		font-size: 24px
-		margin: 0 24px
+		font-size: 1.5rem
+		margin: 0 1.5rem
 </style>
