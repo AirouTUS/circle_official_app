@@ -79,7 +79,7 @@ export default {
     
   .twitter
     width: 80%
-    height: 400px
+    height: 600px
     margin: 80px auto 
     border-right-style: solid
     border-right-color: rgba(15, 70, 100, .12)
