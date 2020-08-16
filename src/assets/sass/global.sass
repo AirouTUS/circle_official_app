@@ -1,4 +1,10 @@
-@import 'constants'
+@import "variables"
+@import "animation"
+
+@import "~bulma"
+// 削除予定
+@import "~buefy/src/scss/buefy"
+@import '~buefy/src/scss/utils/_all'
 
 /* josefin-sans-regular - latin */
 @font-face 
@@ -18,17 +24,17 @@
   src: url('../fonts/josefin-sans-v15-latin-100italic.woff2') format('woff2')
 
 html
-  font-size: 16px
   height: 100%
+  font-size: 16px
   @media screen and (min-width:  960px)
     font-size: 18px
     
   
 body
-  color: $m-brown
+  font-size: 1rem
   line-height: 1
-  box-sizing: border-box
-  font-family: "Josefin Sans"
+  font-family: $font
+  color: $text-default
   height: 100%
   margin: 0
   padding: 0
@@ -36,7 +42,6 @@ body
 a
   text-decoration: none
   cursor: pointer
-  color: $m-brown
 
 nav ul
   list-style: none
@@ -67,14 +72,6 @@ p
 
 .text-white
   color: $white
-.text-brown
-  color: $m-brown
-.text-yellow
-  color: $m-yellow
-.bg-brown
-  background-color: $m-brown
-.bg-yellow
-  background-color: $m-yellow
 
 .flexbox
   display: flex
@@ -100,8 +97,6 @@ p
     margin: 0 !important
   &-1
     margin: .25em !important
-  &-2
-    margin: .5rem !important
   &-3
     margin: .75em !important
   &r
@@ -109,8 +104,6 @@ p
       margin-right: 0 !important
     &-1
       margin-right: .25em !important
-    &-2
-      margin-right: .5rem !important
     &-3
       margin-right: .75em !important
   &l
@@ -118,8 +111,6 @@ p
       margin-left: 0 !important
     &-1
       margin-left: .25em !important
-    &-2
-      margin-left: .5rem !important
     &-3
       margin-left: .75em !important
   &t
@@ -127,8 +118,6 @@ p
       margin-top: 0 !important
     &-1
       margin-top: .25em !important
-    &-2
-      margin-top: .5rem !important
     &-3
       margin-top: .75em !important
   &b
@@ -136,8 +125,6 @@ p
       margin-bottom: 0 !important
     &-1
       margin-bottom: .25em !important
-    &-2
-      margin-bottom: .5rem !important
     &-3
       margin-bottom: .75em !important
   &x
@@ -147,9 +134,6 @@ p
     &-1
       margin-left: .25rem !important
       margin-right: .25rem !important
-    &-2
-      margin-left: .5rem !important
-      margin-right: .5rem !important
     &-3
       margin-left: .75rem !important
       margin-right: .75rem !important
@@ -160,9 +144,6 @@ p
     &-1
       margin-top: .25rem !important
       margin-bottom: .25rem !important
-    &-2
-      margin-top: .5rem !important
-      margin-bottom: .5rem !important
     &-3
       margin-top: .75rem !important
       margin-bottom: .75rem !important
@@ -172,8 +153,6 @@ p
     padding: 0 !important
   &-1
     padding: .25em !important
-  &-2
-    padding: .5rem !important
   &-3
     padding: .75em !important
   &r
@@ -181,8 +160,6 @@ p
       padding-right: 0 !important
     &-1
       padding-right: .25em !important
-    &-2
-      padding-right: .5rem !important
     &-3
       padding-right: .75em !important
   &l
@@ -190,8 +167,6 @@ p
       padding-left: 0 !important
     &-1
       padding-left: .25em !important
-    &-2
-      padding-left: .5rem !important
     &-3
       padding-left: .75em !important
   &t
@@ -199,8 +174,6 @@ p
       padding-top: 0 !important
     &-1
       padding-top: .25em !important
-    &-2
-      padding-top: .5rem !important
     &-3
       padding-top: .75em !important
   &b
@@ -208,8 +181,6 @@ p
       padding-bottom: 0 !important
     &-1
       padding-bottom: .25em !important
-    &-2
-      padding-bottom: .5rem !important
     &-3
       padding-bottom: .75em !important
   &x
@@ -219,9 +190,6 @@ p
     &-1
       padding-left: .25rem !important
       padding-right: .25rem !important
-    &-2
-      padding-left: .5rem !important
-      padding-right: .5rem !important
     &-3
       padding-left: .75rem !important
       padding-right: .75rem !important
@@ -232,9 +200,6 @@ p
     &-1
       padding-top: .25rem !important
       padding-bottom: .25rem !important
-    &-2
-      padding-top: .5rem !important
-      padding-bottom: .5rem !important
     &-3
       padding-top: .75rem !important
       padding-bottom: .75rem !important
