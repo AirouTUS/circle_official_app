@@ -1,6 +1,5 @@
 <template lang="pug">
   div#index
-    header-nav
     router-view
 </template>
 
@@ -9,6 +8,9 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="sass">
+  #index
+    // height: 100%
+    min-height: 100%
+    background-color: $boundary-white
 </style>
