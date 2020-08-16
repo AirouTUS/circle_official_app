@@ -1,4 +1,4 @@
-# circle_site_v2
+# circle_official_app
 
 ## Project setup
 ```
