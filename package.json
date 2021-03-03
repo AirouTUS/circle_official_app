@@ -9,7 +9,7 @@
   "dependencies": {
     "buefy": "^0.8.13",
     "contentful": "^7.14.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "v-scroll-lock": "^1.1.0",
     "vue": "^2.6.11",
